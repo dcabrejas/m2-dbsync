@@ -1,0 +1,17 @@
+{
+  "name": "dcabrejas/db-sync",
+  "description": "Remote database syncing for Magento 2",
+  "type": "magento2-module",
+  "require": {
+    "php": "~7.0",
+    "magento/framework": "101.0.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Dcabrejas\\DBSync\\": ""
+    }
+  }
+}

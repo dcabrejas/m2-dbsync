@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="dcabrejas_dbsynk" translate="label" sortOrder="1000">
+            <label>Database Sync</label>
+        </tab>
+        <section id="dbsynk" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Database Sync</label>
+            <tab>dcabrejas_dbsynk</tab>
+            <resource>Dcabrejas_DBSync::config</resource>
+            <group id="remote" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Remote Details</label>
+                <field id="ssh_user" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>SSH User</label>
+                </field>
+                <field id="ssh_host" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>SSH Host</label>
+                </field>
+                <field id="ssh_port" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>SSH Port</label>
+                </field>
+                <field id="app_root_path" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Path to the Root of the Remote Magento Application</label>
+                    <comment>Eg. /microcloud/domains/example/domains/example.com/www</comment>
+                </field>
+            </group>
+
+            <group id="post_sync" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Post Sync</label>
+                <field id="configuration_values" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configuration Values</label>
+                    <frontend_model>Dcabrejas\DBSync\Block\Adminhtml\System\Config\ConfigValues</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
